@@ -67,7 +67,11 @@ document.getElementById('prediction-form').addEventListener('submit', async func
     body: formData
   });
   const result = await response.json();
-  document.getElementById('prediction-result').innerText = `Peor resultado: ${result.worst_result}% Mejor resultado: ${result.best_result}%`;
+  document.getElementById('prediction-result').innerHTML = `
+    <p style="color: red;">Peor resultado: ${result.worst_result}%</p>
+    <p style="color: green;">Mejor resultado: ${result.best_result}%</p>
+    <p style="color: black;">Clase identificada: ${result.type}%</p>`;
+    
 });
 </script>
 {% endblock %}

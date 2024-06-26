@@ -109,14 +109,15 @@ def predict():
 
         # Desnormalizar las predicciones
         predicted_prices = scalers[s]['close'].inverse_transform(np.array(predictions).reshape(-1, 1))
-        predictionIncrements.append((predicted_prices.max() - symbol_data['close'].iloc[0]) / symbol_data['close'].iloc[0] * 100)
+        predictionIncrements.append(((predicted_prices.max() - symbol_data['close'].iloc[0]) / symbol_data['close'].iloc[0]) * 100)
 
     worst_result = min(predictionIncrements)
     best_result = max(predictionIncrements)
     return jsonify({
         'symbol': symbol,
         'worst_result': worst_result,
-        'best_result': best_result
+        'best_result': best_result,
+        'type': clf_prediction[0]
     })
 
 
