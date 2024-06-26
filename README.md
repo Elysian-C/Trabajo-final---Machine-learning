@@ -4,10 +4,10 @@
     <img src="img/UPC_logo.png" alt="Logo UPC" width="80" height="80">
   </a>
 
-  <h3 align="center"> Aplicaciones-de-Data-Science-CC92</h3>
+  <h3 align="center"> Machine-Learning-CC57</h3>
 
   <p align="center">
-    Modelo de clasificación y recomendación de tesis de pregrado UPC
+    Modelo de predicción de criptomonedas UPC
     <br/>
     <a href=""><strong>Explore the docs »</strong></a>
     <br/>
@@ -17,7 +17,7 @@
     Patricia Daniela Reyes Silva
   </p>
   <p align="center">
-    Objetivo: Diseñar un modelo de clasificación para clasificar trabajos académicos de la UPC y diseñar un modelo de recomendación para poder obtener textos similares a uno seleccionado.
+    Objetivo: Crear un modelo predictivo que clasifique criptomonedas en base a métricas y determine su crecimiento o decrecimiento a lo largo del tiempo.
   </p>
   <br/>
   <a href="https://docs.google.com/document/d/1ZLV04htsHfDt8a1REZJzgE-mr9IwTQdOw6Zph7msCbU/edit?usp=sharing" target="_blank"><strong>Para conocer la investigación del proyecto dar click</strong></a>
