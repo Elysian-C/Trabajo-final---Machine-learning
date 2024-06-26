@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block navbar %}
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item active">
+      <a class="nav-link" aria-current="page" href="{{ url_for('main') }}">
+        <i class="fa-solid fa-house"  style="color: #000000;"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ url_for('recommender') }}">
+        <i class="fa-solid fa-list"  style="color: #000000;"></i>
+        Sistema de recomendación
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+{% block content %}
+<div class="d-flex">
+  <div class="container m-4 justify-items-center align-items-center">
+    <img
+    id="img-tesis"
+    src="{{ url_for('static', filename='img/gold-coins.jpg') }}"
+    alt="RemindMe Logo"
+  />
+  </div>
+  <div class="container bg-white m-4 bordes">
+    <div class="row h-auto p-0">
+      <h2 class="text-center fs-1 my-2 p-0">Sistema de clasisficación y recomendación de criptomonedas</h2>
+    </div>
+    <div class="row h-auto">
+      <p class="p-2 m-0 mw-100 size-p justificar">
+        ¡Bienvenido al futuro de la investigación criptomonedica! Nuestro sistema de clasificación 
+        y recomendación de criptomonedas ha sido diseñado para simplificar tu búsqueda en el vasto 
+        mundo de las criptomonedas. Descubre una plataforma inteligente que organiza, analiza y 
+        te conecta con criptomonedas relevantes, brindándote una experiencia criptopersonalizada. 
+        Desde explorar las últimas tendencias hasta encontrar criptomonedas afines a tus intereses, 
+        esta herramienta está lista para potenciar tu viaje criptomonedico. Únete a nosotros y 
+        haz que la búsqueda de criptomonedas sea más eficiente y emocionante que nunca.
+      </p>
+    </div>
+    <div class="row m-2 justify-content-between">
+      <div class="col-6">
+        <div class="d-flex justify-content-center mb-2">
+          <img
+          id="img-rc"
+          src="{{ url_for('static', filename='img/rich.jpg') }}"
+          alt="RemindMe Logo"
+          />
+        </div>
+        <a class=" btn btn-outline-success w-100" href="{{ url_for('recommender') }}">Recomendación de criptomonedas</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

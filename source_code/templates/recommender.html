@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+{% block navbar %}
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="{{ url_for('main') }}">
+        <i class="fa-solid fa-house" style="color: #000000;"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ url_for('recommender') }}">
+        <i class="fa-solid fa-list" style="color: #000000;"></i>
+        Sistema de recomendación
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+{% block content %}
+<div class="d-flex">
+  <div class="container m-4 justify-items-center align-items-center">
+    <img
+    id="img-tesis"
+    src="{{ url_for('static', filename='img/gold-coins.jpg') }}"
+    alt="RemindMe Logo"
+  />
+  </div>
+  <div class="container bg-white m-4 bordes">
+    <div class="row h-auto p-0">
+      <h2 class="text-center fs-1 my-2 p-0">Sistema de recomendación de criptomonedas</h2>
+    </div>
+    <div class="row h-auto">
+      <form id="prediction-form" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="symbol" class="form-label">Seleccione una criptomoneda</label>
+              <div class="input-group has-validation">
+                  <select id="symbol" name="symbol" class="form-select" required>
+                    <option selected disabled value="">Elige...</option>
+                    {% for crypto in cryptos %}
+                    <option value="{{ crypto }}">{{ crypto }}</option>
+                    {% endfor %}
+                  </select>
+              </div>
+              <div class="invalid-feedback">
+                  Seleccione una criptomoneda.
+              </div>
+            </div>
+          <hr class="my-4">
+          <div class="d-flex justify-content-center mb-2">
+            <button class="w-75 btn btn-primary btn-lg" type="submit">Predecir criptomoneda</button>
+          </div>
+          </div>
+        </form>
+        <div id="prediction-result" class="mt-4">
+          <!-- Aquí se mostrarán los resultados de la predicción -->
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('prediction-form').addEventListener('submit', async function(event) {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const response = await fetch('/predict', {
+    method: 'POST',
+    body: formData
+  });
+  const result = await response.json();
+  document.getElementById('prediction-result').innerText = `Peor resultado: ${result.worst_result}% Mejor resultado: ${result.best_result}%`;
+});
+</script>
+{% endblock %}

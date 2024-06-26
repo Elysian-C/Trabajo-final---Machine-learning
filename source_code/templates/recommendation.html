@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block navbar %}
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="{{ url_for('main')}}">
+        <i class="fa-solid fa-house"  style="color: #000000;"></i>
+        Inicio
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="{{ url_for('recommend')}}">
+        <i class="fa-solid fa-list"  style="color: #000000;"></i>
+        Sistema de recomendación
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+{% block content %}
+<div class="d-flex">
+  <div class="container m-4 justify-items-center align-items-center">
+    <img
+    id="img-tesis"
+    src="{{url_for('static', filename='img/gold-coins.jpg')}}""
+    alt="RemindMe Logo"
+  />
+  </div>
+  <div class="container bg-white m-4 bordes">
+    <div class="row h-auto p-0">
+      <h2 class="text-center fs-3 m-0 p-0">El texto selecionado fue</h2>
+      <p class="text-center fw-bold fs-6 m-0" >{{title}}</p>
+    </div>
+    <div class="row h-auto">
+          <hr class="my-2">
+          <div class="row h-auto p-0">
+            <h2 class="text-center fs-3 p-0">Recomendaciones</h2>
+          </div>
+          <ul class="sin_puntos">
+            {%for r in result%}
+            <li> {{r}} <hr class="m-0"> </li>
+            {%endfor%}
+          </ul>
+          <div class="d-flex justify-content-center mb-2">
+            <a class="w-75 btn btn-danger btn-lg" href="{{ url_for('recommend')}}">Return</a>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

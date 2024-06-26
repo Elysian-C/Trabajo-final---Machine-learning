@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../img/coin-pool.jpg);
+}
+#img-upc{
+    width:3rem;
+    height:3rem;
+    margin-right: 10px;
+}
+#img-tesis{
+    width:100%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Ajusta la posición, difuminado y color de la sombra */
+    border-radius: 10px;
+}
+.active{
+    color: #ffffff;
+}
+.no-resizable {
+    resize: none;
+}
+
+.sin_puntos{
+    text-decoration: none;
+    list-style:none;
+}
+.size-p{
+    font-size: 1.25rem;
+}
+#img-rc{
+    width:50%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Ajusta la posición, difuminado y color de la sombra */
+    border-radius: 10px;
+}
+
+.bordes{
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Ajusta la posición, difuminado y color de la sombra */
+}
+.navbar{
+    background-color: gold;
+
+}
+.justificar{
+    text-align: justify;
+}
+.nav-item a{
+    color: black;
+    font-weight: bold;
+}
+.navbar-brand{
+    padding-left: 15px;
+}
+.navbar-brand span{
+    color: black;
+    font-weight: bold;
+}
+.nav-item{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+h1{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    border-color: cadetblue;
+    border-style: double;
+}
+
+.button {
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+}
+footer{
+    width:100%;
+    background:rgb(237, 237, 237)
+}

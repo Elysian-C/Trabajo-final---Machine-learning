@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block navbar %}
+<ul class="navbar-nav ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" aria-current="page" href="{{ url_for('main')}}">
+      <i class="fa-solid fa-house" style="color: #000000;"></i>
+      Inicio
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="{{ url_for('classify')}}">
+      <i class="fa-solid fa-file" style="color: #000000;"></i>
+      Clasificador
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{ url_for('recommend')}}">
+      <i class="fa-solid fa-list" style="color: #000000;"></i>
+      Sistema de recomendación
+    </a>
+  </li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="d-flex">
+  <div class="container m-4 justify-items-center align-items-center">
+    <img id="img-tesis" src="{{url_for('static', filename='img/class_1.png')}}""
+    alt=" RemindMe Logo" />
+  </div>
+  <div class="container bg-white m-4 bordes">
+    <div class="row h-auto p-0">
+      <h2 class="text-center fs-1 my-2 p-0">Sistema de clasificación de tesis</h2>
+    </div>
+    <div class="row h-auto">
+      <form class="needs-validation"  method="post" action="/classification" novalidate>
+        <div class="row g-3">
+          <div class="col-12">
+            <label for="title" class="form-label">Titulo</label>
+            <textarea  class="form-control no-resizable" rows="2" id="title" name="title" required></textarea>
+            <div class="invalid-feedback">
+              Titulo de tesis es obligatorio.
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="summary" class="form-label">Resumen</label>
+            <textarea   class="form-control no-resizable" rows="3" id="summary" name="summary" required></textarea>
+            <div class="invalid-feedback">
+              Resumen de tesis es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div class="mt-3">
+          <div class="form-check form-check-inline">
+            <input id="modelo3" name="modelo" type="radio" class="form-check-input" required value="modelo3">
+            <label class="form-check-label" for="modelo3">Modelo 1 (Naive Bayes)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input id="modelo4" name="modelo" type="radio" class="form-check-input" required value="modelo4">
+            <label class="form-check-label" for="modelo4">Modelo 2 (Regresión Logistica)</label>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="d-flex justify-content-center mb-2">
+          <button class="w-75 btn btn-primary btn-lg" type="submit">Clasificar texto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
